@@ -1,0 +1,42 @@
+version: "3.4"
+
+services:
+  panel:
+    build:
+      context: ../panel
+      dockerfile: "${PWD}/bash_functions/panel.Dockerfile"
+
+    container_name: panel
+    restart: always
+    hostname: panel
+    ports:
+      - '3000:3000'
+    depends_on:
+      - panel_master
+      # - panel_test
+      - postgresql
+    volumes:
+      - ../panel:/opt/app
+
+  panel_master:
+    build:
+      context: ../panel
+      dockerfile: "${PWD}/bash_functions/panel.Dockerfile"
+    container_name: panel_master
+    restart: always
+    hostname: panel_master
+    ports:
+      - '3001:3000'
+    depends_on:
+      - postgresql
+    volumes:
+      - ../panel_master/panel:/opt/app
+
+  postgresql:
+    image: vexorio/postgres:10-ip4r
+    container_name: postgresql
+    hostname: postgresql
+    restart: always
+    ports:
+      - '5432:5432'
+

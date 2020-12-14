@@ -1,0 +1,22 @@
+database_development: &database_common
+  host: localhost
+  adapter: postgresql
+  database: finances_main
+  encoding: utf8
+  reconnect: true
+  prepared_statements: false
+
+panel_user_development: &panel_user_development
+  username: finances_user_main
+  password: DkasInoPxs
+
+panel_user_staging: &panel_user_staging
+  username: finances_user_main
+  password: 9VVuV6oMNhhdKWX
+  port: 6432
+
+panel_user_production: &panel_user_production
+  username: finances_user_main
+  password: c0Fh40BcmfRxlCG
+  port: 6432
+

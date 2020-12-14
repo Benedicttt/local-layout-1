@@ -1,0 +1,57 @@
+{
+  "name": "smoke",
+  "version": "1.0.0",
+  "description": "",
+  "main": "conf.js",
+  "dependencies": {
+    "angular": "^1.7.4",
+    "chrome": "^0.1.0",
+    "ffmpeg": "0.0.4",
+    "fs-extra": "^7.0.0",
+    "html-reporter": "^2.21.3",
+    "jasmine": "^3.2.0",
+    "jasmine-allure-reporter": "^1.0.2",
+    "jasmine-reporters": "^2.3.2",
+    "jasmine-spec-reporter": "^4.2.1",
+    "jasmine2-protractor-utils": "^1.3.0",
+    "jquery": "^3.3.1",
+    "js-yaml": "^3.12.0",
+    "merge-yaml": "^1.0.0",
+    "protractor-html-reporter-2": "^1.0.4",
+    "protractor-http-client": "^1.0.4",
+    "require-all": "^3.0.0",
+    "webdriver": "^5.0.0-alpha.7",
+    "webdriverio": "^4.13.2",
+    "yamljs": "^0.3.0"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.3.9",
+    "allure-commandline": "^2.7.0",
+    "fs-extra": "^7.0.0",
+    "jasmine-allure-reporter": "^1.0.2",
+    "jasmine-reporters": "^2.3.2",
+    "jasmine-spec-reporter": "^4.2.1",
+    "js-yaml": "^3.12.0",
+    "protractor": "^5.4.1",
+    "protractor-beautiful-reporter": "^1.2.5"
+  },
+  "scripts": {
+    "chrome": "APP_HOST=http://localhost:3000 protractor conf.js  --browser chrome --continue-on-error --disableChecks",
+    "chrome headless": "APP_HOST=http://localhost:3000 protractor conf.js --browser chrome --continue-on-error --disableChecks  --capabilities.chromeOptions.args headless --capabilities.chromeOptions.args window-size=1920,1080",
+    "chrome video": "APP_HOST=http://localhost:3000 protractor video.conf.js --browser chrome --continue-on-error --disableChecks",
+    "chrome(headless) and report": "APP_HOST=http://localhost:3000 rm -rf allure-report allure-results && protractor conf.js  --browser chrome --continue-on-error --disableChecks --capabilities.chromeOptions.args headless --capabilities.chromeOptions.args window-size=1920,1080 && allure generate allure-results --clean -o allure-report && allure serve ./allure-results",
+    "firefox": "APP_HOST=http://localhost:3000 protractor conf.js  --browser firefox",
+    "firefox_headless": "APP_HOST=http://localhost:3000 MOZ_HEADLESS=1 protractor conf.js  --browser firefox",
+    "webdriver-update": "node_modules/protractor/bin/webdriver-manager update",
+    "trouble": "APP_HOST=http://localhost:3000 protractor --troubleshoot true conf.js --browser 'chrome'",
+    "allure server ./allure-result": "allure generate allure-results --clean -o allure-report && allure serve ./allure-results",
+    "exit": "exit 0",
+    "delete folder ./allure-report": "rm -rf allure-report allure-results && ntl"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.binomo.com/finances/smoke.git"
+  },
+  "author": "Sergey Kievskiy",
+  "license": "404"
+}

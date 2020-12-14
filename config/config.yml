@@ -1,0 +1,26 @@
+version: 3.0.4
+admin: test197@yopmail.com
+
+
+#spock
+finsystem: '500'              
+admin_project_id: 1           
+promotion_project_id: 2       
+development_project_id: 3     
+salary_cash_account_id: 7     
+
+#Slack contacts
+slack_url: ''
+slack_admin: ''
+slack_findir: ''
+# slack_finman: '@stas'
+
+slack2_url: ''
+slack2_admin: ''
+slack2_findir: ''
+
+service:
+  copy_period: true
+
+demand:
+  copy_period: true

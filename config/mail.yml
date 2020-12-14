@@ -1,0 +1,7 @@
+address: smtp.gmail.com
+port: 587
+domain: 404-group.com
+user_name: system@404-group.com
+password: 829I211v
+authentication: plain
+enable_starttls_auto: true

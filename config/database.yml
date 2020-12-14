@@ -1,0 +1,17 @@
+<%=
+  file = File.join(Rails.root, "config", "database_settings.yml")
+  IO.read(file) if File.exist?(file)
+%>
+
+development:
+  <<: *database_common
+  <<: *panel_user_development
+
+staging:
+  <<: *database_common
+  <<: *panel_user_staging
+
+production:
+  <<: *database_common
+  <<: *panel_user_production
+
